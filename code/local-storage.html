@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information Form</title>
+    <style>
+        .form-container {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+<div class="form-container">
+    <h2>User Information</h2>
+    <form id="userForm">
+        <div class="form-group">
+            <label for="userId">User ID:</label>
+            <input type="text" id="userId" required>
+        </div>
+        <div class="form-group">
+            <label for="userName">User Name:</label>
+            <input type="text" id="userName" required>
+        </div>
+        <div class="form-group">
+            <label for="apiKey">API Key:</label>
+            <input type="text" id="apiKey" required>
+        </div>
+        <div class="form-group">
+            <label for="documentId">Document ID:</label>
+            <input type="text" id="documentId" required>
+        </div>
+        <div class="form-group">
+            <label for="sid">Secret Id:</label>
+            <input type="text" id="sid" required/>
+        </div>
+        <div class="form-group">
+            <label for="sKey">Secret Key:</label>
+            <input type="text" id="sKey" required/>
+        </div>
+        <div class="form-group">
+            <label for="token">Token:</label>
+            <input type="text" id="token" required/>
+        </div>
+        <button type="submit">Save Information</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('userForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Get form values
+        const userId = document.getElementById('userId').value;
+        const userName = document.getElementById('userName').value;
+        const apiKey = document.getElementById('apiKey').value;
+        const documentId = document.getElementById('documentId').value;
+        const sid = document.getElementById('sid').value;
+        const sKey = document.getElementById('sKey').value;
+        const token = document.getElementById('token').value;
+
+        // Store in localStorage
+        localStorage.setItem('isLoggedIn', 'true');
+        localStorage.setItem('userId', userId);
+        localStorage.setItem('bai-sk', apiKey);
+        localStorage.setItem('userName', userName);
+        localStorage.setItem('documentId', documentId);
+        localStorage.setItem('sid', sid);
+        localStorage.setItem('bai-sk',sKey)
+        localStorage.setItem('jwt',token)
+
+
+        alert('Information saved successfully!');
+    });
+
+
+    function generateSessionId() {
+        return Math.random().toString(36).substring(2, 15);
+    }
+</script>
+</body>
+</html>
