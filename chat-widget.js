@@ -836,8 +836,8 @@
                 this.sId = localStorage.getItem('sid');
                 this.sdocumentIdId = localStorage.getItem('documentId');
                 // Configuration
-            this.chatApiEndpoint = 'https://uat.api.chat.buddyai.in/v2/api/'+this.sId+'/chat/';
-            this.docApiEndpoint = 'https://uat.api.chat.buddyai.in/v2/api/document/'+this.sId+'/chat/';
+            this.chatApiEndpoint = 'https://dev.api.chat.buddyai.in/v2/api/'+this.sId+'/chat/';
+            this.docApiEndpoint = 'https://dev.api.chat.buddyai.in/v2/api/document/'+this.sId+'/chat/';
                 this.supportedFileTypes = {
                     image: ['image/jpeg', 'image/png', 'image/gif', 'image/webp'],
                     video: ['video/mp4', 'video/webm', 'video/ogg'],
